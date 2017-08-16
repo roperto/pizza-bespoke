@@ -2,6 +2,51 @@
 <html>
     <head>
         <title>Bespoke</title>
+        <style type="text/css">
+            body.beautiful {
+                color: #fff;
+                background: linear-gradient(-45deg, #00a, #000);
+                background-size: 100vw 100vh;
+                font-family: sans-serif;
+                transition: all 500ms linear;
+                opacity: 0;
+            }
+
+            body.beautiful li {
+                transition: all 500ms linear;
+            }
+        </style>
+        <script>
+            function beautify() {
+                document.body.className = 'beautiful';
+                document.getElementsByTagName('h1')[0].innerText = "Still ugly, but it has style!";
+
+                let button = document.getElementsByTagName('button')[0];
+                button.parentElement.removeChild(button);
+
+                let ul = document.getElementsByTagName('ul')[0];
+                let li = document.createElement('li');
+                li.innerText = '... and JavaScript';
+                ul.appendChild(li);
+
+                setTimeout(function () { document.body.style.opacity = 1; }, 0);
+
+                setTimeout(function () {
+                    let li = document.createElement('li');
+                    li.style.opacity = 0;
+                    li.innerText = 'If it is JavaScript, there should be a framework!';
+                    ul.appendChild(li);
+                    setTimeout(function () { li.style.opacity = 1; }, 0);
+                }, 2000);
+
+                setTimeout(function () {
+                    let btn = document.createElement('button');
+                    btn.innerText = 'Bespoke!';
+                    btn.onclick = function () { alert("Use 'gulp serve', it is much cooler..."); };
+                    document.body.appendChild(btn);
+                }, 4000);
+            }
+        </script>
     </head>
 
     <body>
@@ -13,5 +58,15 @@
                 <li>HTML is easy to edit</li>
             </ul>
         </article>
+
+        <a href="slide2.html">next...</a>
+
+        <h1>This is ugly!</h1>
+        <ul>
+            <li>
+                No problems, I know CSS...
+                <button onclick="beautify();">prove it</button>
+            </li>
+        </ul>
     </body>
 </html>
