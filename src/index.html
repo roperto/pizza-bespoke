@@ -2,43 +2,6 @@
 <html>
     <head>
         <title>Bespoke</title>
-        <style type="text/css">
-            body.beautiful {
-                color: #fff;
-                background: linear-gradient(-45deg, #00a, #000);
-                background-size: 100vw 100vh;
-                font-family: sans-serif;
-                transition: all 500ms linear;
-            }
-
-            body.beautiful li {
-                transition: all 500ms linear;
-            }
-        </style>
-        <script>
-            function beautify() {
-                document.body.className = 'beautiful';
-                document.getElementsByTagName('h1')[1].innerText = "Still ugly, but it has style!";
-
-                let button = document.getElementsByTagName('button')[0];
-                button.parentElement.removeChild(button);
-
-                let ul = document.getElementsByTagName('ul')[1];
-                let li = document.createElement('li');
-                li.innerText = '... and JavaScript';
-                ul.appendChild(li);
-
-                setTimeout(function () { document.body.style.opacity = 1; }, 0);
-
-                setTimeout(function () {
-                    let li = document.createElement('li');
-                    li.style.opacity = 0;
-                    li.innerText = 'If it is JavaScript, there should be a framework!';
-                    ul.appendChild(li);
-                    setTimeout(function () { li.style.opacity = 1; }, 0);
-                }, 2000);
-            }
-        </script>
     </head>
 
     <body>
@@ -53,12 +16,35 @@
             </section>
 
             <section>
-                <h1>This is ugly!</h1>
+                <h1>We can use CSS and JS!</h1>
                 <ul>
-                    <li>
-                        No problems, I know CSS...
-                        <button onclick="beautify();">prove it</button>
-                    </li>
+                    <li>This is ugly and without any interaction</li>
+                    <li>But as a developer it should be easy to improve</li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>HTML5</h1>
+                <ul>
+                    <li>Please notice we are using HTML5 semantic tags<li>
+                    <li>It allows HTML to hold only the content</li>
+                    <li>Leave presentation layer to CSS</li>
+                    <li>Leave behaviour to JavaScript</li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>All slides in one page</h1>
+                <ul>
+                    <li>All content should be together</li>
+                    <li>Bespoke will analyse the structure to create slides</li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>Almost ready...</h1>
+                <ul>
+                    <li>Let's load bespoke!</li>
                 </ul>
             </section>
         </article>
